@@ -121,8 +121,7 @@ trait CanSortRecords
 
     protected function applySorting($query)
     {
-        foreach ($this->getSorts() as $sort) {
-            [$column, $direction] = $sort;
+        foreach ($this->getSorts() as $column => $direction) {
 
             if ($this->isRelationshipSort($column)) {
                 $query = $this->applyRelationshipSort(
